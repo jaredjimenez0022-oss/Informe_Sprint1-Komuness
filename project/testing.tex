@@ -1,0 +1,121 @@
+\chapter{Control de calidad}
+
+El proceso de control de calidad implementado en el proyecto \textbf{Komuness} durante el Sprint 1 se enfocó en garantizar la estabilidad, funcionalidad y usabilidad del sistema mediante una estrategia integral que combina pruebas manuales, automatizadas y validaciones de usuario final. 
+
+El equipo adoptó un enfoque de \textit{testing} continuo, donde cada funcionalidad implementada fue sometida a múltiples niveles de verificación antes de su integración al sistema principal.
+
+La estrategia de control de calidad se estructuró en tres pilares fundamentales:
+\begin{itemize}
+    \item \textbf{Pruebas funcionales:} verificación de que cada requerimiento cumple con las especificaciones.
+    \item \textbf{Pruebas de integración:} validación de la comunicación entre componentes.
+    \item \textbf{Pruebas de usabilidad:} confirmación de que las interfaces son intuitivas y accesibles para el público objetivo.
+\end{itemize}
+
+\section{Equipo participante}
+Los miembros involucrados en el proceso de control de calidad fueron:
+\begin{itemize}
+    \item \textbf{Fredrik Aburto Jiménez} 
+    \item \textbf{Angélica Díaz Barrios} 
+    \item \textbf{Andrés Salas Araya} 
+\end{itemize}
+
+\section{Herramientas utilizadas}
+Se emplearon diversas herramientas y entornos para garantizar la calidad:
+\begin{itemize}
+    \item \textbf{Postman:} pruebas automatizadas de endpoints API y validación de respuestas HTTP (fielding2000).
+   \item \textbf{Jest + Supertest:} framework de pruebas unitarias y de integración para backend en Node.js (openjsnode2025).
+  \item \textbf{Navegadores múltiples:} validación cross-browser (Chrome, Firefox, Safari, Edge) (microsoft2025).
+  \item \textbf{Dispositivos físicos:} validación en smartphones y tablets reales para pruebas responsive.
+
+\end{itemize}
+
+\section{Guiones de pruebas}
+
+Se desarrollaron \textbf{8 guiones de pruebas específicos} para validar las funcionalidades críticas implementadas durante el Sprint 1.  
+Los criterios empleados fueron:
+\begin{itemize}
+    \item Cobertura funcional completa (cada requerimiento con al menos una prueba).
+    \item Escenarios de borde (validación de casos límite y manejo de errores).
+    \item Flujos de usuario reales (simulación de comportamientos típicos).
+    \item Compatibilidad cross-platform (funcionamiento en distintos dispositivos y navegadores).
+\end{itemize}
+
+\subsection{Guión 1: Sistema de Categorías (RF001, RF004, RF007)}
+
+\begin{longtable}{ | p{2cm} | p{4cm} | p{4cm} | p{4cm} | c |}
+\hline
+\textbf{Historias} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Obtenido} & \textbf{Condición}\\
+\hline
+RF001 y RF004 & Creación de categoría nueva desde panel admin con nombre ``MUSICA'' & Categoría creada exitosamente, aparece en listado de admin y disponible en selectores de usuario & Categoría creada correctamente, validación de duplicados funcionando, integración completa con frontend & \color{ForestGreen}PASÓ \\
+\hline
+RF004 y RF007 & Eliminación de categoría con publicaciones asociadas & Sistema debe mostrar advertencia y prevenir eliminación, o reasignar publicaciones & Advertencia mostrada correctamente, eliminación bloqueada cuando hay dependencias & \color{ForestGreen}PASÓ \\
+\hline
+RF007 & Filtrado de publicaciones por categoría ``Cultura'' & Solo publicaciones de esa categoría se muestran con indicador visual de filtro activo & Filtrado funcionando correctamente, badges implementados, combinación con otros filtros operativa & \color{ForestGreen}PASÓ \\
+\hline
+\caption{Guión de pruebas 1: Sistema de categorías}
+\label{TestScript1}
+\end{longtable}
+
+\subsection{Guión 2: Calendario Interactivo (RF005, RF009)}
+
+\begin{longtable}{ | p{2cm} | p{4cm} | p{4cm} | p{4cm} | c |}
+\hline
+\textbf{Historias} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Obtenido} & \textbf{Condición}\\
+\hline
+RF005 & Navegación entre meses y visualización de eventos & Transición fluida y eventos en fechas correctas con indicadores visuales & Navegación funcionando, eventos renderizados correctamente & \color{ForestGreen}PASÓ \\
+\hline
+RF009 & Creación de evento con precio ₡5000 y hora 2:00 PM & Evento guardado con datos completos, mostrado en calendario y detalles & Persistencia en BD correcta, visualización completa en calendario y detalles & \color{ForestGreen}PASÓ \\
+\hline
+RF005 y RF009 & Visualización de detalles de evento & Modal/panel muestra título, descripción, fecha, hora, precio, categoría & Detalles completos, formato correcto de hora y precio & \color{ForestGreen}PASÓ \\
+\hline
+\caption{Guión de pruebas 2: Calendario interactivo}
+\label{TestScript2}
+\end{longtable}
+
+\subsection{Guión 3: Sistema de Archivos (RF003, RF008)}
+
+\begin{longtable}{ | p{2cm} | p{4cm} | p{4cm} | p{4cm} | c |}
+\hline
+\textbf{Historias} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Obtenido} & \textbf{Condición}\\
+\hline
+RF003 & Subida de imagen JPG de 2MB a publicación & Imagen subida a Digital Ocean, URL generada y asociada a publicación & Subida exitosa y visualización correcta & \color{ForestGreen}PASÓ \\
+\hline
+RF008 & Subida de documento PDF de 5MB a biblioteca & Archivo almacenado en servidor, metadata guardada en BD & Almacenamiento local correcto, metadata completa y descarga operativa & \color{ForestGreen}PASÓ \\
+\hline
+RF008 & Creación de carpeta ``Documentos 2025'' y subida en ella & Carpeta creada, archivo en jerarquía & Jerarquía funcionando, navegación operativa & \color{ForestGreen}PASÓ \\
+\hline
+\caption{Guión de pruebas 3: Sistema de archivos}
+\label{TestScript3}
+\end{longtable}
+
+\subsection{Guión 4: Optimizaciones Frontend (RF002, RF010)}
+
+\begin{longtable}{ | p{2cm} | p{4cm} | p{4cm} | p{4cm} | c |}
+\hline
+\textbf{Historias} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Obtenido} & \textbf{Condición}\\
+\hline
+RF002 & Navegación entre vistas principales & Todas las rutas funcionan, botones ``Volver'' operativos & Navegación fluida y sin errores de rutas & \color{ForestGreen}PASÓ \\
+\hline
+RF010 & Visualización en móvil (320px) & Interfaz adaptada, sin superposición, texto legible & Responsive design funcionando correctamente & \color{ForestGreen}PASÓ \\
+\hline
+RF010 & Manejo de errores en subida de archivos & Mensajes de error claros y orientativos & Feedback visual correcto, guías de solución mostradas & \color{ForestGreen}PASÓ \\
+\hline
+\caption{Guión de pruebas 4: Optimizaciones frontend}
+\label{TestScript4}
+\end{longtable}
+
+\subsection{Guión 5: Autenticación y Seguridad (RNF001)}
+
+\begin{longtable}{ | p{2cm} | p{4cm} | p{4cm} | p{4cm} | c |}
+\hline
+\textbf{Historias} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Obtenido} & \textbf{Condición}\\
+\hline
+RNF001 & Login con credenciales válidas & Usuario autenticado, JWT generado, redirección a dashboard & Autenticación exitosa, token válido, sesión persistente & \color{ForestGreen}PASÓ \\
+\hline
+RNF001 & Acceso a ruta protegida sin login & Redirección a login con mensaje informativo & Middleware funcionando, redirección correcta & \color{ForestGreen}PASÓ \\
+\hline
+RNF001 & Logout e invalidación de sesión & Sesión cerrada, token invalidado, redirección a inicio & Logout funcionando, cookie removida & \color{ForestGreen}PASÓ \\
+\hline
+\caption{Guión de pruebas 5: Autenticación y seguridad}
+\label{TestScript5}
+\end{longtable}

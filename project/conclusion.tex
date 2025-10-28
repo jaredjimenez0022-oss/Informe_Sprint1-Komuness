@@ -1,0 +1,60 @@
+\chapter{Conclusiones y trabajo futuro}
+
+\section{Conclusiones}
+El Sprint 1 del proyecto \textbf{Komuness} ha resultado en la entrega exitosa de un MVP estable y funcional que establece bases sólidas para el desarrollo futuro de la plataforma comunitaria. Los principales logros alcanzados demuestran la viabilidad técnica del sistema y su potencial impacto en la comunidad de Tejarcillos, Alajuelita.
+
+Entre los logros más relevantes se destacan:
+
+\begin{itemize}
+    \item \textbf{Implementación del sistema de categorías:} Se desarrolló un sistema robusto de clasificación temática que mejora significativamente la organización del contenido. Los usuarios pueden filtrar publicaciones por áreas específicas (arte, cultura, deporte, educación), lo que facilita el descubrimiento de información relevante. Incluye interfaces administrativas completas y herramientas de usuario intuitivas, constituyendo un modelo escalable para futuras expansiones.
+    
+    \item \textbf{Calendario interactivo funcional:} Se implementó un calendario que permite visualizar y gestionar eventos comunitarios. La integración fluida con el sistema de publicaciones y campos específicos para eventos (precio y hora) genera un ecosistema cohesivo que fortalece la participación comunitaria.
+    
+    \item \textbf{Estabilización y optimización del sistema base:} Las correcciones en frontend y backend transformaron un sistema parcialmente funcional en una plataforma estable. Las mejoras en navegación, visualización, adaptación responsive y manejo de errores elevaron significativamente la experiencia de usuario.
+    
+    \item \textbf{Fortalecimiento del sistema de archivos:} Se optimizó la biblioteca digital mediante estrategias híbridas de almacenamiento (nube para imágenes y local para documentos), logrando un sistema robusto y económicamente viable para la gestión de recursos multimedia.
+    
+    \item \textbf{Validación de la arquitectura MERN:} El stack tecnológico seleccionado demostró ser adecuado para aplicaciones comunitarias, al ofrecer flexibilidad, escalabilidad y facilidad de mantenimiento. La separación entre frontend y backend facilita el desarrollo paralelo y futuras expansiones.
+    
+    \item \textbf{Metodología de desarrollo efectiva:} El uso de prácticas SCRUM, control de versiones con Git y testing automatizado resultó en un proceso de desarrollo organizado y predecible. La velocidad del equipo de 21 puntos establece una línea base realista para futuras iteraciones.
+\end{itemize}
+
+\section{Problemáticas y limitaciones}
+El sistema presenta las siguientes problemáticas y limitaciones:
+
+\subsection*{Problemáticas}
+\begin{itemize}
+     \item \textbf{Dependencias de infraestructura externa:} El uso de servicios como Digital Ocean Spaces y MongoDB Atlas puede generar costos operativos y puntos de falla a considerar en la planificación a largo plazo (mongodb,2025).
+    
+    \item \textbf{Ausencia de sistema de notificaciones:} Actualmente no existen mecanismos para avisar sobre nuevas publicaciones, eventos próximos o comentarios, lo cual limita el engagement comunitario.
+    \item \textbf{Funcionalidad de búsqueda básica:} El sistema no implementa búsqueda de texto completo ni algoritmos de relevancia, restringiendo la experiencia de descubrimiento de contenido (fielding,2000).
+    \item \textbf{Limitaciones en moderación de contenido:} La plataforma depende únicamente de la intervención manual, careciendo de herramientas automatizadas para detección o workflows de aprobación.
+\end{itemize}
+
+\subsection*{Limitaciones}
+\begin{itemize}
+    \item \textbf{Escalabilidad en almacenamiento local:} La estrategia actual, aunque económica, puede volverse insuficiente a medida que aumente el volumen de archivos, ya que no incluye compresión ni archivado automático.
+    \item \textbf{Plataformas soportadas:} El sistema está optimizado para navegadores modernos (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+). La funcionalidad puede verse limitada en versiones anteriores. No existe aplicación móvil nativa, dependiendo del navegador móvil.
+    \item \textbf{Requerimientos técnicos:} Se requiere conexión a internet estable, JavaScript habilitado y al menos 2GB de RAM libre en el dispositivo cliente. La experiencia se degrada en conexiones lentas (<1Mbps).
+\end{itemize}
+
+\section{Trabajo futuro}
+Como líneas de mejora y expansión se proponen las siguientes iniciativas:
+
+\begin{itemize}
+    \item \textbf{Sistema de membresías premium y monetización (Sprint 2):} Integración con PayPal, creación de niveles de membresía con beneficios diferenciados y límites configurables en publicaciones, garantizando la sostenibilidad económica del proyecto.
+    
+    \item \textbf{Perfiles públicos y banco de profesionales (Sprint 2–3):} Desarrollo de perfiles detallados que permitan mostrar habilidades, experiencias y servicios. El banco de profesionales fomentará conexiones y el desarrollo económico local.
+    
+    \item \textbf{Sistema de notificaciones y engagement:} Implementación de notificaciones push web, correos automáticos para eventos próximos y herramientas de interacción como “me gusta” y compartir en redes sociales.
+    
+    \item \textbf{Mejoras en búsqueda y descubrimiento:} Desarrollo de búsqueda de texto completo, algoritmos de relevancia, filtros combinados y recomendaciones basadas en intereses y actividad del usuario.
+    
+    \item \textbf{Herramientas de moderación y administración:} Automatización de detección de contenido inapropiado, workflows de aprobación y paneles administrativos avanzados.
+    
+    \item \textbf{Optimización de performance:} Aplicación de lazy loading, caching estratégico, optimización de consultas a la base de datos y compresión de recursos para mejorar tiempos de carga en conexiones lentas.
+    
+    \item \textbf{Funcionalidades sociales avanzadas:} Desarrollo de mensajería privada, grupos temáticos, eventos recurrentes en calendario e integración con redes sociales externas.
+    
+    \item \textbf{Analítica y métricas:} Creación de un dashboard de analíticas para administradores con métricas de engagement, contenido popular, patrones de uso y crecimiento comunitario.
+\end{itemize}
